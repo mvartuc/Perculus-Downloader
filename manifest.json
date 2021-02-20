@@ -1,0 +1,11 @@
+{
+    "name": "Perculus Downloader",
+    "version": "1.0",
+    "description": "Perculus Downloader Online dersleri indirerek Perculus sistemi üzerinden ders gören öğrencilerin internet sorunu yaşamaması için tasarlanmış open source bir eklentidir",
+
+    // "background": {
+    //     "scripts": "asdf.js",
+    //     "persistent": false
+    // },
+    "manifest_version": 2
+}
