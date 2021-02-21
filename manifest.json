@@ -5,7 +5,7 @@
     "manifest_version": 2,
     "content_scripts": [
         {
-            "matches": ["<all_urls>"],
+            "matches": ["https://etoplanti*.sakarya.edu*/app/*"],
             "js": ["content.js"]
         }
     ],
