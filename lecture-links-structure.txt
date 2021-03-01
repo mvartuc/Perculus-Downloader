@@ -1,8 +1,11 @@
 source: https://developer.chrome.com/docs/extensions/mv2/match_patterns/
 
+TODO: find a pattern that includes all perculus lecture links
+
 https://etoplantiv3.sakarya.edu.tr/app/38cbea6c-f029-4917-8a1e-b55d6fa5b6da/1__hafta_sanal_s_n_f?s=98163d1b-aad8-4844-b3fd-391b79583a00&u=607953
 https://etoplantiv3.sakarya.edu.tr/app/ced2c56b-f8a4-4e03-8e4d-de2eb40563a7/2__hafta_sanal_s_n_f?s=973ce4e9-7378-4ebb-822e-421c32cfee0c&u=445613
 https://etoplanti1.sakarya.edu.tr/app/01871a5e-86d3-41a8-b872-89230c850a67/3__hafta_sanal_s_n_f?s=59456cf2-394f-48f9-a254-f09a87f3e2b1&u=485111
 
 Pattern:
-https://etoplanti*.sakarya.edu*/app/*
+*://etoplantiv3.sakarya.edu.tr/app/* -- university specific
+*://etoplanti1*.edu*app/*

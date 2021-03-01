@@ -1,1 +1,0 @@
-alert("Found the lecture!")

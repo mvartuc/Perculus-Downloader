@@ -1,16 +1,40 @@
 {
-    "name": "Perculus Downloader",
-    "version": "1.0",
-    "description": "Perculus Downloader Online dersleri indirerek Perculus sistemi üzerinden ders gören öğrencilerin internet sorunu yaşamaması için tasarlanmış open source bir eklentidir",
-    "manifest_version": 2,
-    "content_scripts": [
-        {
-            "matches": ["https://etoplanti*.sakarya.edu*/app/*"],
-            "js": ["content.js"]
-        }
-    ],
-    "browser_action": {
-        "default_popup": "popup.html",
-        "default_title": "Perculus Downloader"
+  "manifest_version": 2,
+  "name": "Perculus Downloader",
+  "version": "1.0.0",
+  "description": "Perculus Downloader Online dersleri indirerek Perculus sistemi üzerinden ders gören öğrencilerin internet sorunu yaşamaması için tasarlanmış open source bir eklentidir",
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "author": "Muhammed Artuc <muhammedv.artuc@gmail.com>",
+  "permissions": [
+    "declarativeContent",
+    "activeTab"
+  ],
+  "background" : {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "assets/icon16.png",
+      "48": "assets/icon48.png",
+      "128": "assets/icon128.png"
     }
+  },
+  "web_accessible_resources": [
+    "assets/spinner.gif",
+    "vendor/ffmpeg-core.js",
+    "vendor/ffmpeg-core.wasm",
+    "vendor/ffmpeg-core.worker.js"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*","https://*/*"],
+      "js": ["vendor/ffmpeg.min.js", "vendor/ffmpeg-core.js", "merge.js"]
+    }
+  ]
 }
