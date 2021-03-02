@@ -64,4 +64,4 @@ const merge = async (filename) => {
     hideSpinner();
 }
 
-//TODO: SYNC AUDIO PROPERLY! (FFMPEG RELATED)
+//TODO: SYNC AUDIO
