@@ -6,4 +6,4 @@ document.getElementById('start').onclick = () => {
   });
 };
 
-document.getElementById('file_name').value = "indirilecek dosyaya isim ver";
+document.getElementById('file_name').value = "filename";

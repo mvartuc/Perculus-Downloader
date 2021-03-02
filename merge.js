@@ -1,18 +1,16 @@
-const CSS_CENTERED = 'position:fixed;top:50%;left:50%;transform:translate(-50%, -50%);';
+const CSS_CENTERED = "position:fixed;top:50%;left:50%;transform:translate(-50%, -50%);";
 let spinner = null;
 let player = null;
-const {
-    createFFmpeg,
-    fetchFile
-} = FFmpeg;
+const { createFFmpeg, fetchFile } = FFmpeg;
+
 const ffmpeg = createFFmpeg({
     log: true,
-    corePath: chrome.runtime.getURL('vendor/ffmpeg-core.js'),
+    corePath: chrome.runtime.getURL("vendor/ffmpeg-core.js"),
 });
 
 const showSpinner = () => {
-    spinner = document.createElement('img');
-    spinner.src = chrome.runtime.getURL('assets/spinner.gif');
+    spinner = document.createElement("img");
+    spinner.src = chrome.runtime.getURL("assets/spinner.gif");
     spinner.style = CSS_CENTERED;
     document.body.append(spinner);
 }
@@ -32,20 +30,17 @@ const getLecMedia = () => {
     return urls;
 }
 
-
 const getMergedFile = async (video, audio, filename) => {
     console.log("merging...");
+
     if (!ffmpeg.isLoaded()) {
         await ffmpeg.load();
     }
+
     console.log("loaded");
-    // display "fetching video"
     ffmpeg.FS("writeFile", "video.mp4", await fetchFile(video));
-    // display "video fetched!"
     console.log("wrote video");
-    // display "fetching audio"
     ffmpeg.FS("writeFile", "audio.mp4", await fetchFile(audio));
-    // display "audio fetched"
     console.log("wrote audio");
     await ffmpeg.run("-i", "video.mp4", "-i", "audio.mp4", "-c:v", "copy", "-c:a", "aac", filename);
     console.log("ran merge command...");
@@ -57,7 +52,7 @@ const getMergedFile = async (video, audio, filename) => {
     }));
     link.download = filename;
     link.click();
-    console.log("clicked link");
+    console.log("download process started");
 }
 
 const merge = async (filename) => {
