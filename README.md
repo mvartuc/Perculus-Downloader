@@ -6,7 +6,7 @@ Perculus-Downloader is a chrome extension that provides use for students who wan
 
 Download the project as a .zip file
 
-Unzip and drag the folder into chrome://extensions/ (make sure developer mode is on)
+Unzip and drag the folder into chrome://extensions/ (make sure the developer mode is on)
 
 Give necessary permissions and install the extension, then browse the rerun page for your desired lecture
 
